@@ -10,5 +10,5 @@ permalink: index.html
 The following list of Pokemon is fetched at build-time and each entry is transformed into a static page, using a subsequent fetch for detailed information:
 
 {% for pokemon in data.pokemon_list %}
-- [{{ pokemon.name }}](/dex/{{ pokemon.name }}.html)
+- [{{ pokemon.name }}](/dex/{{ pokemon.slug }}.html)
 {% endfor %}
