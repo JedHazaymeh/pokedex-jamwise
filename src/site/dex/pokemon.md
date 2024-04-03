@@ -1,18 +1,27 @@
 ---
 layout: base
 pagination:
-  data: pokemon
-  alias: entry
-permalink: dex/{{ entry.slug }}.html
-title: "#{{ entry.id }} - {{ entry.name }}"
+  data: pokemon_list
+  as: entry
+fetch:
+  function: pokemon_details.py
+  as: pokemon
+  params:
+    slug: "{{ entry.name }}"
+permalink: "dex/{{ pokemon.name }}.html"
+title: "#{{ pokemon.id }} - {{ pokemon.name }}"
 ---
 
-![{{ entry.name }}]({{ entry.sprites.front_default }})
+![{{ pokemon.name }}]({{ pokemon.sprites.front_default }})
 
 ### Types
-{% for type in entry.types %}
-- {{ type }}
+
+{% for slot in pokemon.types %}
+- {{ slot.type.name }}
 {% endfor %}
 
-### Pokedex Entry
-{{ entry.flavor_text }}
+### Base Stats
+
+{% for slot in pokemon.stats %}
+- {{ slot.stat.name }}: {{ slot.base_stat }}
+{% endfor %}

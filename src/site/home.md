@@ -7,8 +7,8 @@ permalink: index.html
 
 ### Build-time Data
 
-The following Pokemon data was provided at build-time and transformed into static HTML pages:
+The following list of Pokemon is fetched at build-time and each entry is transformed into a static page, using a subsequent fetch for detailed information:
 
-{% for pokemon in data.pokemon %}
-- [{{ pokemon.name }}](/dex/{{ pokemon.slug }}.html)
+{% for pokemon in data.pokemon_list %}
+- [{{ pokemon.name }}](/dex/{{ pokemon.name }}.html)
 {% endfor %}
