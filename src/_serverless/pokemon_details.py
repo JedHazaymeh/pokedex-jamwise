@@ -12,9 +12,9 @@ def map_pokemon(pokemon):
   }
 
 def handler(req, ctx):
-  pokemon_slug = req['params']['slug']
+  pokemon_id = req['params']['id'] # slug or id
 
-  base_url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_slug}"
+  base_url = f"https://pokeapi.co/api/v2/pokemon/{pokemon_id}"
   data = requests.get(base_url).json()
 
   return map_pokemon(data)

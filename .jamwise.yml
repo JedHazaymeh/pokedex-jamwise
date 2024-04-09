@@ -3,4 +3,4 @@ dir:
   output: dist
   layouts: src/_layouts
   data: src/_data
-  functions: src/_functions
+  serverless: src/_serverless

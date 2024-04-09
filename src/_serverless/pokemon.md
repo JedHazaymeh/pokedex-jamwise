@@ -1,14 +1,10 @@
 ---
 layout: base
-pagination:
-  data: pokemon_list
-  as: entry
 fetch:
   function: pokemon_details.py
   as: pokemon
   params:
-    slug: "{{ entry.slug }}"
-permalink: "dex/{{ entry.slug }}.html"
+    id: "{{ request.params.id }}"
 title: "#{{ pokemon.id }} - {{ pokemon.name }}"
 ---
 
