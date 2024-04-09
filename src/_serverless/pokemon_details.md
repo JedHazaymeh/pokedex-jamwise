@@ -1,7 +1,7 @@
 ---
 layout: base
 fetch:
-  function: pokemon_details.py
+  function: fetch_details.py
   as: pokemon
   params:
     id: "{{ request.params.id }}"

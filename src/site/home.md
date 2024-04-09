@@ -22,7 +22,7 @@ Pressing the button below will generate a random number with client-side JavaScr
 <script>
 document.getElementById('ssr-pokemon').addEventListener('click', async () => {
   const id = Math.floor(Math.random() * 999) + 1;
-  window.location.href = `/serverless/pokemon.md?id=${id}`;
+  window.location.href = `/serverless/pokemon_details.md?id=${id}`;
 });
 </script>
 
@@ -40,7 +40,7 @@ The following button will fetch a random Pokemon with client-side JavaScript and
 <script>
 document.getElementById('csr-pokemon').addEventListener('click', async () => {
   const id = Math.floor(Math.random() * 999) + 1;
-  const response = await fetch(`/serverless/pokemon_details.py?id=${id}`);
+  const response = await fetch(`/serverless/fetch_details.py?id=${id}`);
   const pokemon = await response.json();
   document.getElementById('pokemon-name').textContent = pokemon.name;
   document.getElementById('pokemon-image').src = pokemon.image;
