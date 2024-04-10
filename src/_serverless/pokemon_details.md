@@ -8,7 +8,7 @@ fetch:
 title: "#{{ pokemon.id }} - {{ pokemon.name }}"
 ---
 
-![{{ pokemon.name }}]({{ pokemon.image }})
+<img src="{{ pokemon.image }}" alt="{{ pokemon.name }}" />
 
 ### Types
 

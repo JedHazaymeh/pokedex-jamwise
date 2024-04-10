@@ -8,7 +8,7 @@ def map_pokemon(pokemon):
   }
 
 def handler(req, ctx):
-  url = f"https://pokeapi.co/api/v2/pokemon?offset={random.randint(1, 1000)}&limit=10"
+  url = f"https://pokeapi.co/api/v2/pokemon?offset={random.randint(1, 1000)}&limit=5"
   data = requests.get(url).json()
 
   return [map_pokemon(x) for x in data['results']]
