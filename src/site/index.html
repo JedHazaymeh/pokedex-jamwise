@@ -1,0 +1,17 @@
+---
+layout: base
+---
+<p>Welcome to the sample Jamwise site, which displays information about Pokemon.</p>
+
+<h3>Pre-rendered</h3>
+<p>The following list of Pokemon is fetched at build-time, and each link to a pre-rendered page:</p>
+
+<ol>
+  {% for pokemon in pokemon_list %}
+  <li>
+    <a href="/dex/{{ pokemon.slug }}/index.html">
+      {{ pokemon.name }}
+    </a>
+  </li>
+  {% endfor %}
+</ol>

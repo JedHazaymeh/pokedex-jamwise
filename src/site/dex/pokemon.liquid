@@ -1,0 +1,31 @@
+---
+layout: base
+pagination:
+  data: pokemon_list
+  as: pokemon
+permalink: /dex/{{ pokemon.slug }}/index.html
+title: "#{{ pokemon.id }} {{ pokemon.name }}"
+---
+<h2>#{{ pokemon.id }} - {{ pokemon.name }}</h2>
+<img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+<h3>Types</h3>
+<ul>{% for type in pokemon.types %}<li>{{ type }}</li>{% endfor %}</ul>
+<h3>Abilities</h3>
+<ul>{% for ability in pokemon.abilities %}<li>{{ ability }}</li>{% endfor %}</ul>
+<h3>Stats</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Stat</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stat in pokemon.stats %}
+    <tr>
+      <td>{{ stat[0] }}</td>
+      <td>{{ stat[1] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

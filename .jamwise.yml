@@ -1,6 +1,0 @@
-dir:
-  input: src/site
-  output: dist
-  layouts: src/_layouts
-  data: src/_data
-  serverless: src/_serverless
